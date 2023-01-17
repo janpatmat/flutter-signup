@@ -22,19 +22,19 @@ class signupPage extends StatelessWidget {
               color: Colors.white,
               borderRadius: BorderRadius.all(Radius.circular(15)),
             ),
-            child: Stack(
-              children: [
-                Positioned(
-                    top: 50,
-                    left: 0,
-                    right: 0,
-                    child: Image(
-                      image: AssetImage('images/personlogo.png'),
-                      height: 150,
-                      width: 150,
-                    ))
-              ],
-            ),
+            child: Column(children: [
+              Padding(padding: EdgeInsetsDirectional.only(top: 48.0)),
+              Image(
+                image: AssetImage('images/personlogo.png'),
+                height: 150,
+                width: 150,
+              ),
+              SizedBox(
+                height: 50,
+                width: 50,
+              ),
+              Text("Wellcome back!")
+            ]),
           )
         ],
       ),
