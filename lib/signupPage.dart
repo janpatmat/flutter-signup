@@ -1,4 +1,8 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'homepage.dart';
 
 class signupPage extends StatelessWidget {
   const signupPage({super.key});
@@ -33,7 +37,46 @@ class signupPage extends StatelessWidget {
                 height: 50,
                 width: 50,
               ),
-              Text("Wellcome back!")
+              Text("Wellcome back!"),
+              Padding(
+                  padding: EdgeInsets.only(left: 30, right: 30),
+                  child: TextField(
+                    decoration: const InputDecoration(
+                        labelText: 'Email or Phone number'),
+                  )),
+              Padding(
+                  padding: EdgeInsets.only(left: 30, right: 30),
+                  child: TextField(
+                    decoration: const InputDecoration(labelText: 'Password'),
+                  )),
+              Container(
+                padding: (EdgeInsets.only(right: 30)),
+                alignment: Alignment.bottomRight,
+                child: Text("Recover account?"),
+              ),
+              ElevatedButton(
+                  style: ButtonStyle(), onPressed: () {}, child: Text("sad")),
+              SizedBox(
+                height: 30,
+                width: 50,
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 30, right: 30),
+                child: ElevatedButton.icon(
+                  style: ElevatedButton.styleFrom(
+                      onPrimary: Colors.black,
+                      minimumSize: Size(double.infinity, 50)),
+                  icon: FaIcon(
+                    FontAwesomeIcons.google,
+                    color: Colors.white,
+                  ),
+                  label: Text("Hello world"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => homepage()));
+                  },
+                ),
+              )
             ]),
           )
         ],
