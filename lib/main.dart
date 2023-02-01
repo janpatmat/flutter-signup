@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'signupPage.dart';
+import 'package:flutterloginpage/signupMobile.dart';
+import 'signupWeb.dart';
+import 'responsiveLayout.dart';
+import 'signupMobile.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -11,8 +15,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-     debugShowCheckedModeBanner: false,
-      home: signupPage(),
+      debugShowCheckedModeBanner: false,
+      home: ResponsiveLayout(
+          mobileBody: signupMobile(), desktopBody: signupWeb()),
     );
   }
 }
